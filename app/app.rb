@@ -10,11 +10,11 @@ use Rack::PostBodyContentTypeParser
 # TIP: If you open your Battlesnake URL in browser you should see this data
 get '/' do
   appearance = {
-    apiversion: "1",        
-    author: "",           # TODO: Your Battlesnake Username
-    color: "#888888",     # TODO: Personalize
-    head: "default",      # TODO: Personalize
-    tail: "default",      # TODO: Personalize
+    apiversion: '1',
+    author: '',           # TODO: Your Battlesnake Username
+    color: '#F64A91',     # TODO: Personalize
+    head: 'gamer',      # TODO: Personalize
+    tail: 'mouse',      # TODO: Personalize
   }
 
   camelcase(appearance).to_json
@@ -25,12 +25,12 @@ end
 # TODO: Use this function to decide how your snake is going to look on the board.
 post '/start' do
   request = underscore(env['rack.request.form_hash'])
-  puts "START"
-  "OK\n"
+  puts 'START'
+  'OK\n'
 end
 
 # This function is called on every turn of a game. It's how your snake decides where to move.
-# Valid moves are "up", "down", "left", or "right".
+# Valid moves are 'up', 'down', 'left', or 'right'.
 # TODO: Use the information in rack.request.form_hash to decide your next move.
 post '/move' do
   request = underscore(env['rack.request.form_hash'])
@@ -44,6 +44,6 @@ end
 # This function is called when a game your Battlesnake was in ends.
 # It's purely for informational purposes, you don't have to make any decisions here.
 post '/end' do
-  puts "END"
-  "OK\n"
+  puts 'END'
+  'OK\n'
 end
