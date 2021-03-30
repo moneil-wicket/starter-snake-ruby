@@ -1,8 +1,8 @@
 require 'rack'
 require 'rack/contrib'
 require 'sinatra'
-require './util'
-require './move'
+require_relative 'util'
+require_relative 'move'
 require 'byebug'
 
 use Rack::PostBodyContentTypeParser
